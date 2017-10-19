@@ -20,4 +20,14 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
+" Open nerd tree when opening vim
+autocmd StdinReadPre * let s:std_in=1                                                            
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif  
+" close vim if nerd tree is only window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" quickly open nerd tree
+map <C-n> :NERDTreeToggle<CR>
+
+
+
 
