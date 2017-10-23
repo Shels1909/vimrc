@@ -14,6 +14,12 @@ colorscheme badwolf
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
+set path+=**
+
+set wildmenu
+
+set incsearch
+
 " Remap page scrolling keys for smooth scrolling
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
